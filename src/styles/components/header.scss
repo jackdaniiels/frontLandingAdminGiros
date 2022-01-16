@@ -1,0 +1,138 @@
+@font-face {
+    font-family: DroidSans-Bold;
+    src: url("../../assets/fonts/DroidSans-Bold.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: DroidSans;
+    src: url("../../assets/fonts/DroidSans.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Eagle-Book;
+    src: url("../../assets/fonts/Eagle-Book.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Museo500-Regular;
+    src: url("../../assets/fonts/Museo500-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Museo700-Regular;
+    src: url("../../assets/fonts/Museo700-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Museo900-Regular;
+    src: url("../../assets/fonts/Museo900-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: MuseoSans_1;
+    src: url("../../assets/fonts/MuseoSans_1.otf") format("opentype");
+}
+
+.droid-bold {
+    font-family: DroidSans-Bold;
+}
+
+.droid-sans {
+    font-family: DroidSans;
+}
+
+.eagle-book {
+    font-family: Eagle-Book;
+}
+
+.museo-500-reg {
+    font-family: Museo500-Regular;
+}
+
+.museo-700-reg {
+    font-family: Museo700-Regular;
+}
+
+.museo-9000-reg {
+    font-family: Museo900-Regular;
+}
+
+.museo-sans {
+    font-family: MuseoSans_1;
+}
+
+
+.navbar {
+    background-color: #fcd808;
+    height: 95px;
+}
+
+.logo {
+    width: 280px;
+}
+
+.slogan {
+    font-family: MuseoSans_1;
+    font-size: 17px;
+    color: #068298;
+    padding-top: 23px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.bg-gray {
+    background-color: #f5f5f5;
+}
+
+.self-center {
+    display: flex;
+    align-self: center;
+}
+
+.ribbon-bottom::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    /* bottom: -60px; */
+    display: block;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-top: 30px solid #9a9696;
+}
+
+.btn-custom {
+    border-radius: 25px;
+    height: 50px;
+    border: 1px solid #353535;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #353535;
+    color: white;
+    font-family: MuseoSans_1;
+}
+
+.btn-custom:hover {
+    border-radius: 25px;
+    height: 50px;
+    border: 1px solid #212020;
+    background-color: #212020;
+    color: white;
+    font-family: MuseoSans_1;
+}
+
+.footer {
+    background-color: #fcd808;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
