@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import imgTest from "../assets/img/img-1.png";
+import { externalLink } from "../helpers/externalLink";
+import { CardInterface } from "../interfaces/card.interface";
 
-export const Card = ({ data }: { data: any }) => {
-  const [state, setstate] = useState([1, 2, 3, 4]);
+export const Card = ({
+  idx,
+  img,
+  description,
+  link = "",
+  button,
+  target = "",
+}: CardInterface) => {
   return (
-    <div className="d-flex justify-content-center py-5">
-      <div className="row container d-flex justify-content-center w-100">
-        {state.map((item) => (
-          <div key={item} className="col-xl-2 col-lg-3 col-md-6 col-sm-6">
-            <div className="d-flex justify-content-center">
-              <img  src={`http://localhost:1337` + data?.imagenSlide1?.data?.attributes?.url || ''}  alt="" />
-            </div>
-            <p className="text-center mt-4">{data?.cardDescripcion1}</p>
-            <div className="d-flex justify-content-center mb-5">
-              <button className="btn-custom">{data?.cardBoton1}</button>
-            </div>
-          </div>
-        ))}
+    <div key={idx} className="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+      <div className="d-flex justify-content-center">
+        <img src={`http://localhost:1337` + img || ""} alt="" />
+      </div>
+      <p className="text-center mt-4">{description}</p>
+      <div className="d-flex justify-content-center mb-5">
+        <button
+          disabled={target === "_none" ? true : false}
+          className="btn-custom"
+          onClick={() => externalLink(link, target)}
+        >
+          {button}
+        </button>
       </div>
     </div>
   );

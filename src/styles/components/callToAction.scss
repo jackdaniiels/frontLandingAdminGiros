@@ -1,0 +1,70 @@
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .center-on-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .logo {
+    width: 280px;
+  }
+  .center-on-mobile-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .center-on-mobile-text {
+    text-align: center;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .center-on-mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .center-on-mobile-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .logo {
+    width: 280px;
+  }
+  .center-on-mobile-text {
+    text-align: center;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .logo {
+    width: 280px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+.down-arrow {
+  position: relative;
+}
+
+.down-arrow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  border-top: 20px solid #212529;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  right: calc(50% - 20px);
+}

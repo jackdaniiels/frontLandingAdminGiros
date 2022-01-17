@@ -6,7 +6,7 @@
 .swiper-slide {
   // text-align: center;
   // font-size: 18px;
-  background: rgb(210, 210, 210);
+  // background: rgb(210, 210, 210);
   height: 460px;
 
   /* Center slide text vertically */
@@ -37,4 +37,12 @@
   background: #00c2f2;
   border: 2px solid #fff;
   box-shadow: 0px 0px 2px 2px #05c1e3;
+}
+
+.fullscreen-img {
+  // background-image: url("https://www.alvantia.com/wp-content/uploads/2018/10/imagen-Angular-2.jpg");	
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

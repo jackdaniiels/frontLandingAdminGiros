@@ -7,17 +7,17 @@ import logoSlogan from "../assets/img/logo-slogan.svg";
 export const Header = () => {
   return (
     <nav className="navbar">
-      <div className="container d-flex justify-content-between">
+      <div className="container d-flex justify-content-start">
         <div>
           <img
             src={logoVigilado}
-            width="7"
+            width="5"
             height="auto"
             className="d-inline-block align-top"
             alt="logo-vigilado"
           />
         </div>
-        <div>
+        <div className="mx-5">
           <a className="navbar-brand" href="#">
             <img
               src={logoSlogan}
