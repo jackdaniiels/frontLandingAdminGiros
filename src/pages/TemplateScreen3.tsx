@@ -4,12 +4,10 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Template1Context } from "../context/Template1Context";
 import { BgImg } from "../components/BgImg";
-import { CarrouselText } from "../components/CarrouselText";
 import { Cards2 } from "../components/Cards2";
 import Description from "../components/Description";
-import { Button } from "../components/Button";
-import { Cards3 } from "../components/Cards3";
 import { CallToAction1 } from "../components/CallToAction1";
+import { Form } from "../components/Form";
 
 export const TemplateScreen3 = () => {
   const { template2 } = useContext<any>(Template1Context);
@@ -42,6 +40,20 @@ export const TemplateScreen3 = () => {
             />
           </div>
         </BgImg>
+      </div>
+
+      <div className="container py-5">
+        <Description
+          title={template2?.titulo1}
+          description={template2?.descripcion1}
+          className={"bg-white"}
+          darkMode={false}
+        />
+        <div className="row d-flex justify-content-center">
+          <div className="col-xl-6">
+            <Form />
+          </div>
+        </div>
       </div>
 
       <div className="container bg-dark py-5">
@@ -123,6 +135,20 @@ export const TemplateScreen3 = () => {
             />
           </div>
         </BgImg>
+      </div>
+
+      <div className="container py-5">
+        <Description
+          title={template2?.titulo1}
+          description={template2?.descripcion1}
+          className={"bg-white"}
+          darkMode={false}
+        />
+        <div className="row d-flex justify-content-center">
+          <div className="col-xl-6">
+            <Form />
+          </div>
+        </div>
       </div>
 
       {seccionFooter && <Footer />}
