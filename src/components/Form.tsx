@@ -1,7 +1,12 @@
 export const Form = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log("submit", e);
+  };
+
   return (
     <>
-      <form>
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email</label>
           <input
@@ -22,9 +27,9 @@ export const Form = () => {
           <input type="test" className="form-control" />
         </div>
         <div className="d-flex justify-content-center mt-5">
-          <button disabled={false} className="btn-custom mb-2">
+          <button type="submit" disabled={false} className="btn-custom mb-2">
             Enviar
-          </button> 
+          </button>
         </div>
       </form>
     </>
