@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import imgTest from "../assets/img/img-1.png";
 import { externalLink } from "../helpers/externalLink";
 import { CardInterface } from "../interfaces/card.interface";
 

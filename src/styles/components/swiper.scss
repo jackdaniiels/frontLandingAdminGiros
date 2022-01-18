@@ -39,6 +39,14 @@
   box-shadow: 0px 0px 2px 2px #05c1e3;
 }
 
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+  color: white;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-next:after{
+  color: white;
+}
+
 .fullscreen-img {
   // background-image: url("https://www.alvantia.com/wp-content/uploads/2018/10/imagen-Angular-2.jpg");	
   height: 100%;

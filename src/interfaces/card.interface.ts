@@ -4,8 +4,9 @@ export interface CardInterface {
     description?: string;
     button?: string;
     img?: string;
-    link: string;
+    link?: string;
     idx?: number;
     target?: string;
     active?: boolean;
+    darkMode?: boolean;
 }

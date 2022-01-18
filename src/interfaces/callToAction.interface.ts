@@ -7,4 +7,6 @@ export interface CallToActionInterface {
     link?: string;
     target?: string;
     active?: boolean;
+    darkMode?: boolean;
+    showButton?: boolean;
 }
