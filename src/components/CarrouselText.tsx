@@ -10,8 +10,8 @@ import { Template1Context } from "../context/Template1Context";
 import Description from "./Description";
 
 export const CarrouselText = () => {
-  const { template2 } = useContext<any>(Template1Context);
-  const { slideBackgroundImg } = template2;
+  const { template1 } = useContext<any>(Template1Context);
+  const { slideBackgroundImg } = template1;
   let count = 0;
 
   const backgroundImg = slideBackgroundImg?.data?.attributes?.url || "";
@@ -23,15 +23,15 @@ export const CarrouselText = () => {
       "activarSlide3",
       "activarSlide4",
     ];
-    count = Object.keys(template2).filter((key) =>
+    count = Object.keys(template1).filter((key) =>
       activeSliders.includes(key)
     ).length;
   };
 
   countActiveSliders();
 
-  const delay: number = template2?.autoplayDelay
-    ? Number(`${template2?.autoplayDelay}000`)
+  const delay: number = template1?.autoplayDelay
+    ? Number(`${template1?.autoplayDelay}000`)
     : 0;
   SwiperCore.use([Keyboard, Autoplay, Navigation]);
 
@@ -46,20 +46,33 @@ export const CarrouselText = () => {
         navigation={true}
         className="mySwiper py-5"
       >
-        <SwiperSlide className="">
-          <Description
-            title={template2?.titulo2}
-            description={template2?.descripcion2}
-            darkMode={true}
-          />
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <Description
-            title={template2?.titulo2}
-            description={template2?.descripcion2}
-            darkMode={true}
-          />
-        </SwiperSlide>
+        {template1?.activarSlide1 && (
+          <SwiperSlide className="">
+            <Description
+              title={template1?.tituloSlide1}
+              description={template1?.descripcionSlide1}
+              darkMode={true}
+            />
+          </SwiperSlide>
+        )}
+        {template1?.activarSlide2 && (
+          <SwiperSlide className="">
+            <Description
+              title={template1?.tituloSlide2}
+              description={template1?.descripcionSlide2}
+              darkMode={true}
+            />
+          </SwiperSlide>
+        )}
+        {template1?.activarSlide3 && (
+          <SwiperSlide className="">
+            <Description
+              title={template1?.tituloSlide3}
+              description={template1?.descripcionSlide3}
+              darkMode={true}
+            />
+          </SwiperSlide>
+        )}
       </Swiper>
     </div>
   );

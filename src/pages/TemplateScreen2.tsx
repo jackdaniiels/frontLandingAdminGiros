@@ -8,64 +8,85 @@ import { CarrouselText } from "../components/CarrouselText";
 import { Cards2 } from "../components/Cards2";
 import Description from "../components/Description";
 import { Button } from "../components/Button";
-import { Cards3 } from '../components/Cards3';
+import { Cards3 } from "../components/Cards3";
 
 export const TemplateScreen2 = () => {
-  const { template2 } = useContext<any>(Template1Context);
+  const { template1 } = useContext<any>(Template1Context);
+
   const {
-    seccionCalltoAction,
-    seccionCards,
     seccionMenu,
-    seccionSlides,
-    seccionTexto1,
-    seccionTexto2,
-    seccionTexto3,
+    seccionBanner,
+    seccionCards,
+    seccionCardsHorizontal,
+    seccionSlidesTexto,
+    seccionTitulo1,
+    seccionTitulo2,
+    showBoton1,
     seccionFooter,
-  } = template2;
+  } = template1;
   return (
     <>
       {seccionMenu && <Header />}
-      <div className="banner-cta">
-        <CallToAction2
-          data={template2}
-          title={template2?.ctaTitulo1}
-          description={template2?.ctaDescripcion1}
-          button={template2?.ctaBoton1}
-          img={template2?.ctaImagen1?.data?.attributes?.url}
-          link={template2?.ctaLink1}
-          target={template2?.targetCta1}
-        />
-      </div>
+      {seccionBanner && (
+        <div className="banner-cta">
+          <CallToAction2
+            data={template1}
+            title={template1?.ctaTitulo1}
+            description={template1?.ctaDescripcion1}
+            button={template1?.ctaBoton1}
+            img={template1?.ctaImagen1?.data?.attributes?.url}
+            link={template1?.ctaLink1}
+            target={template1?.targetCta1}
+          />
+        </div>
+      )}
+
       <div className="container bg-dark py-5">
         <BgImg>
-          <CarrouselText />
-          <Cards2 data={template2} />
+          {seccionSlidesTexto && <CarrouselText />}
+          {seccionCards && <Cards2 data={template1} />}
         </BgImg>
       </div>
-      <div className="my-4">
-        <Description
-          title={template2?.titulo1}
-          description={template2?.descripcion1}
-          className={"bg-white"}
-          darkMode={false}
-        />
-      </div>
-      <div className="container bg-dark py-5">
-        <BgImg>
-            <Cards3 data={template2}/>
-        </BgImg>
-      </div>
-      <div className="my-4">
-        <Description
-          title={template2?.titulo1}
-          description={template2?.descripcion1}
-          className={"bg-white"}
-          darkMode={false}
-        />
-      </div>
-      <div className="d-flex justify-content-center mb-5">
-        <Button button="Lorem ipsun" link="eeee" target="jfjfj" />
-      </div>
+
+      {seccionTitulo1 && (
+        <div className="my-4">
+          <Description
+            title={template1?.titulo1}
+            description={template1?.descripcion1}
+            className={"bg-white"}
+            darkMode={false}
+          />
+        </div>
+      )}
+
+      {seccionCardsHorizontal && (
+        <div className="container bg-dark py-5">
+          <BgImg>
+            <Cards3 data={template1} />
+          </BgImg>
+        </div>
+      )}
+
+      {seccionTitulo2 && (
+        <div className="my-4">
+          <Description
+            title={template1?.titulo2}
+            description={template1?.descripcion2}
+            className={"bg-white"}
+            darkMode={false}
+          />
+        </div>
+      )}
+
+      {showBoton1 && (
+        <div className="d-flex justify-content-center mb-5">
+          <Button
+            button={template1?.boton1}
+            link={template1?.link1}
+            target={template1?.target1}
+          />
+        </div>
+      )}
       {seccionFooter && <Footer />}
     </>
   );

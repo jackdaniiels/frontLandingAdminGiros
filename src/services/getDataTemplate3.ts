@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const getDataTemplate1 = async () => {
+export const getDataTemplate3 = async () => {
     let response: any;
     let data: any;
     try {
         response = await axios.get(
-            'http://localhost:1337/api/landing-1s?populate=*',
+            'http://localhost:1337/api/landing-3s?populate=*',
         );
         data = response?.data?.data[0] || {};
     } catch (error) {
@@ -13,6 +13,6 @@ export const getDataTemplate1 = async () => {
         data = [];
     }
 
-    console.log('data1', data);
+    console.log('data3', data);
     return data;
 }
