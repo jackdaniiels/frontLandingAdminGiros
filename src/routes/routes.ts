@@ -1,4 +1,10 @@
 import { lazy, LazyExoticComponent } from "react";
+import { getDataTemplate1 } from '../services/getDataTemplate1';
+
+
+getDataTemplate1().then(data => {
+    console.log('data 1 on routes', data);
+});
 
 type JSXComponent = () => JSX.Element;
 

@@ -6,6 +6,7 @@ interface Props {
   description?: string;
   className?: string;
   darkMode?: boolean;
+  bgDark?: boolean;
 }
 
 const Description = ({
@@ -14,6 +15,7 @@ const Description = ({
   description,
   className,
   darkMode,
+  bgDark=true,
 }: Props) => {
   return !darkMode ? (
     <div className={`container w-100 bg-gray ${className ? className : ""}`}>
@@ -21,7 +23,7 @@ const Description = ({
       <p className="text-center droid-sans pb-4 mx-4 ">{description}</p>
     </div>
   ) : (
-    <div className={`container w-100 bg-dark down-arrow ${className ? className : ""}`}>
+    <div className={`container w-100 ${bgDark ? 'bg-dark' : ""} down-arrow ${className ? className : ""}`}>
       <h1 className="text-center museo-500-reg text-white py-4">{title}</h1>
       <p className="text-center droid-sans text-white pb-4 mx-4 ">
         {description}

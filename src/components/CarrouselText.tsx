@@ -52,6 +52,7 @@ export const CarrouselText = () => {
               title={template1?.tituloSlide1}
               description={template1?.descripcionSlide1}
               darkMode={true}
+              bgDark={false}
             />
           </SwiperSlide>
         )}
@@ -61,6 +62,7 @@ export const CarrouselText = () => {
               title={template1?.tituloSlide2}
               description={template1?.descripcionSlide2}
               darkMode={true}
+              bgDark={false}
             />
           </SwiperSlide>
         )}
@@ -70,6 +72,7 @@ export const CarrouselText = () => {
               title={template1?.tituloSlide3}
               description={template1?.descripcionSlide3}
               darkMode={true}
+              bgDark={false}
             />
           </SwiperSlide>
         )}

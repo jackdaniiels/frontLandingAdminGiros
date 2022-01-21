@@ -1,4 +1,6 @@
 import { Suspense } from "react";
+import { useContext } from "react";
+
 import {
   BrowserRouter,
   NavLink,

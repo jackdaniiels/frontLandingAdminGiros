@@ -41,8 +41,10 @@ export const TemplateScreen2 = () => {
         </div>
       )}
 
-      <div className="container bg-dark py-5">
-        <BgImg>
+      <div className="container bg-dark-disabled my-5">
+        <BgImg
+          backgroundImg={template1?.backgroundImagen1?.data?.attributes?.url}
+        >
           {seccionSlidesTexto && <CarrouselText />}
           {seccionCards && <Cards2 data={template1} />}
         </BgImg>
@@ -60,9 +62,13 @@ export const TemplateScreen2 = () => {
       )}
 
       {seccionCardsHorizontal && (
-        <div className="container bg-dark py-5">
-          <BgImg>
-            <Cards3 data={template1} />
+        <div className="container bg-dark-disabled">
+          <BgImg
+            backgroundImg={template1?.backgroundImagen2?.data?.attributes?.url}
+          >
+            <div className="py-5">
+              <Cards3 data={template1} />
+            </div>
           </BgImg>
         </div>
       )}

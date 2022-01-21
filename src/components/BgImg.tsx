@@ -6,9 +6,10 @@ interface Props {
 }
 
 export const BgImg = ({ children, backgroundImg }: Props) => {
+  console.log("BgImg", backgroundImg);
   return (
     <div
-      className="fullscreen-img-2"
+      className="fullscreen-img-2 bg-dark"
       style={{
         backgroundImage: `url(http://localhost:1337${backgroundImg})`,
       }}
