@@ -1,18 +1,22 @@
 import { useState } from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
+import { postForm } from '../services/postForm';
+
+const initialState = {
+  name: "",
+  email: "",
+  document: "",
+  acceptTerms: false,
+};
 
 export const Form = () => {
-  const [formValues, setFromValues] = useState({
-    name: "",
-    email: "",
-    document: "",
-    acceptTerms: false,
-  });
+  const [formValues, setFromValues] = useState(initialState);
 
   const { name, email, document, acceptTerms } = formValues;
   const [showAlert, setShowAlert] = useState(false);
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    postForm(formValues);
     console.log("submit", e);
     setShowAlert(true);
   };
@@ -21,6 +25,14 @@ export const Form = () => {
     setFromValues({ ...formValues, [e.target.name]: e.target.value });
     console.log("handleInputChange", formValues);
   };
+
+  const handleFormSendOk = () => {
+    console.log("handleFormSendOk");
+    setShowAlert(false);
+    setFromValues(initialState);
+  }
+
+ 
 
   return (
     <>
@@ -69,7 +81,7 @@ export const Form = () => {
         <SweetAlert
           success
           title="Formulario enviado."
-          onConfirm={() => setShowAlert(false)}
+          onConfirm={handleFormSendOk}
         ></SweetAlert>
       )}
     </>
