@@ -23,6 +23,7 @@ export const postForm = async (body: any) => {
     } catch (error) {
         console.error('error', error);
         data = [];
+        throw error;
     }
 
     console.log('post form response =>', data);
