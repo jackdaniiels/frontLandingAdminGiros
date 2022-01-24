@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const BgImg = ({ children, backgroundImg }: Props) => {
-  console.log("BgImg", backgroundImg);
+  // console.log("BgImg", backgroundImg);
   return (
     <div
       className="fullscreen-img-2 bg-dark"

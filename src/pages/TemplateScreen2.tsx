@@ -12,6 +12,7 @@ import { Cards3 } from "../components/Cards3";
 
 export const TemplateScreen2 = () => {
   const { template1 } = useContext<any>(Template1Context);
+  // const template1 = data['template1'][0].attributes;
 
   const {
     seccionMenu,

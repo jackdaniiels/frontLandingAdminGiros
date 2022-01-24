@@ -9,6 +9,7 @@ import { Template1Context } from "../context/Template1Context";
 
 export const TemplateScreen1 = () => {
   const { template2 } = useContext<any>(Template1Context);
+  // const template2 = data["template2"][0].attributes;
   const {
     seccionCalltoAction,
     seccionCards,
@@ -17,7 +18,7 @@ export const TemplateScreen1 = () => {
     seccionTexto1,
     seccionTexto2,
     seccionTexto3,
-    seccionFooter
+    seccionFooter,
   } = template2;
 
   return (

@@ -7,7 +7,7 @@ import { useDataTemplate } from "./hooks/useDataTemplate";
 
 function App() {
   const value = useDataTemplate();
-console.log(value);
+// console.log('value =>', value);
   return (
     <div className="App">
       <Template1Context.Provider value={value}>
