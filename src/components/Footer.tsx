@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="footer bg-yellow">
       <div className="container w-100">
-        <div className="d-flex justify-content-between w-100 px-3">
+        <div className="d-flex justify-content-between center-on-mobile w-100 px-3">
           <div>
             <img
               src={logoVigilado}

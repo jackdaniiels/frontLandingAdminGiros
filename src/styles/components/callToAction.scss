@@ -1,11 +1,12 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .center-on-mobile {
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
   }
   .logo {
     width: 280px;
+    margin-left: 30px;
   }
   .center-on-mobile-column {
     display: flex;
@@ -29,8 +30,8 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {
   .center-on-mobile {
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .center-on-mobile-column {

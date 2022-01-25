@@ -7,7 +7,7 @@ import logoSlogan from "../assets/img/logo-slogan.svg";
 export const Header = () => {
   return (
     <nav className="navbar">
-      <div className="container d-flex justify-content-start">
+      <div className="container d-flex justify-content-start center-on-mobile">
         <div>
           <img
             src={logoVigilado}

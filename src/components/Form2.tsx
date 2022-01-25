@@ -6,23 +6,24 @@ const initialState = {
   name: "",
   email: "",
   document: "",
+  phone: "",
   acceptTerms: true,
 };
 
 let regexEmail =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export const Form = () => {
+export const Form2 = () => {
   const [formValues, setFormValues] = useState(initialState);
 
-  const { name, email, document, acceptTerms } = formValues;
+  const { name, email, document, acceptTerms, phone } = formValues;
   const [showAlertOk, setShowAlertOk] = useState(false);
   const [showAlertError, setShowAlertError] = useState(false);
   const [sendOk, setSendOk] = useState(false);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    postForm(formValues, 1)
+    postForm(formValues, 2)
       .then((res) => {
         setSendOk(true);
         setShowAlertOk(true);
@@ -52,6 +53,7 @@ export const Form = () => {
       email.length > 5 &&
       regexEmail.test(email) &&
       document.length > 4 &&
+      phone.length > 4 &&
       acceptTerms
     );
   };
@@ -108,6 +110,23 @@ export const Form = () => {
           {regexEmail.test(email) && email.length >= 1 && email.length < 5 && (
             <small className="form-text text-muted">
               Email es un campo obligatorio.
+            </small>
+          )}
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Teléfono</label>
+          <input
+            type="test"
+            className="form-control"
+            name="phone"
+            placeholder="Ingresa tu teléfono"
+            value={phone}
+            onInput={validateForm}
+            onChange={(e) => handleInputChange(e)}
+          />
+          {phone.length >= 1 && phone.length < 9 && (
+            <small className="form-text text-muted">
+              Teléfono es un campo obligatorio.
             </small>
           )}
         </div>

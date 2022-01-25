@@ -8,6 +8,7 @@ import { Cards2 } from "../components/Cards2";
 import Description from "../components/Description";
 import { CallToAction1 } from "../components/CallToAction1";
 import { Form } from "../components/Form";
+import { Form2 } from "../components/Form2";
 
 export const TemplateScreen3 = () => {
   const { template3 } = useContext<any>(Template1Context);
@@ -27,6 +28,8 @@ export const TemplateScreen3 = () => {
     seccionTexto3,
     seccionTexto4,
     seccionFooter,
+    formulario1,
+    formulario2,
   } = template3;
   return (
     <>
@@ -37,7 +40,7 @@ export const TemplateScreen3 = () => {
             backgroundImg={template3?.ctaBackgroundImg1?.data?.attributes?.url}
           >
             <div className="banner-cta">
-              <CallToAction2
+              <CallToAction1
                 data={template3}
                 title={template3?.ctaTitulo1}
                 description={template3?.ctaDescripcion1}
@@ -65,7 +68,7 @@ export const TemplateScreen3 = () => {
           )}
           <div className="row d-flex justify-content-center">
             <div className="col-xl-6">
-              <Form />
+              {formulario1 === "formulario" ? <Form /> : <Form2 />}
             </div>
           </div>
         </div>
@@ -94,7 +97,7 @@ export const TemplateScreen3 = () => {
       )}
 
       {seccionTexto2 && (
-        <div className="container py-5">
+        <div className="container">
           <div className="banner-cta">
             <Description
               title={template3?.titulo2}
@@ -130,7 +133,7 @@ export const TemplateScreen3 = () => {
       )}
 
       {seccionTexto3 && (
-        <div className="container py-5">
+        <div className="container">
           <div className="banner-cta">
             <Description
               title={template3?.titulo3}
@@ -176,7 +179,7 @@ export const TemplateScreen3 = () => {
           )}
           <div className="row d-flex justify-content-center">
             <div className="col-xl-6">
-              <Form />
+              {formulario2 === "formulario" ? <Form /> : <Form2 />}
             </div>
           </div>
         </div>

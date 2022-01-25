@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export const postForm = async (body: any) => {
-    const {name, document, email } = body;
+export const postForm = async (body: any, id?: number) => {
+
     let response: any;
-    let url = 'http://localhost:1337/api/formulario1s';
+    let url = `http://localhost:1337/api/formulario${id}s`;
     let data: any;
     try {
         response = await axios(
@@ -12,9 +12,10 @@ export const postForm = async (body: any) => {
                 url: url,
                 data: {
                     data: {
-                        nombre: name,
-                        documento: document,
-                        correo: email
+                        nombre: body.name,
+                        documento: body.document,
+                        correo: body.email,
+                        telefono: body.phone ? body.phone : '',
                     }
                 },
             }
