@@ -14,7 +14,7 @@ export const CallToAction2 = ({
   return (
     <div className="center-content my-5">
       <div className="row container w-100">
-        <div className="col-xl-6 order-sm-2 order-xs-2">
+        <div className="col-xl-6 order-xl-1 order-lg-1 order-md-1 order-sm-2 order-xs-2">
           <h1
             className={`museo-500-reg center-on-mobile-text ${
               darkMode ? "text-white" : ""
@@ -41,7 +41,7 @@ export const CallToAction2 = ({
             </div>
           )}
         </div>
-        <div className="col-xl-6 center-content order-sm-1 order-xs-1">
+        <div className="col-xl-6 center-content order-xl-2 order-lg-2 order-md-2 order-sm-1 order-xs-1">
           <img
             className="img-fluid"
             src={`http://localhost:1337` + img || ""}

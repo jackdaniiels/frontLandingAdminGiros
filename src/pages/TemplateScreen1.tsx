@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { CallToAction1 } from "../components/CallToAction1";
 import { Cards } from "../components/Cards";
 import { Carrousel } from "../components/Carrousel";
@@ -6,10 +7,43 @@ import Description from "../components/Description";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Template1Context } from "../context/Template1Context";
+import { getDataTemplate1 } from "../services/getDataTemplate1";
 
 export const TemplateScreen1 = () => {
   const { template2 } = useContext<any>(Template1Context);
-  // const template2 = data["template2"][0].attributes;
+  const [templateData, setTemplateData] = useState<any>({});
+  const [data, setData] = useState<any>([]);
+  const { id: param } = useParams();
+
+  useEffect(() => {
+    setTemplateData(template2);
+  }, [template2]);
+
+
+  useEffect(() => {
+    getDataTemplate1().then((data: any) => {
+      getDataByRouteParam(param);
+    });
+  }, [param]);
+
+  const getDataByRouteParam = (param: any) => {
+    // const filterData = data.find((item: any) => item.ruta === param);
+    // console.log('filterData =>', filterData);
+    // setData(filterData);
+  };
+
+  if (!template2) {
+    return (
+      <>
+        <p>Servidor no disponible.</p>
+      </>
+    );
+  }
+
+  // return (
+  //   <><pre>{JSON.stringify(data, null,3)}</pre></>
+  // )
+
   const {
     seccionCalltoAction,
     seccionCards,
@@ -19,7 +53,7 @@ export const TemplateScreen1 = () => {
     seccionTexto2,
     seccionTexto3,
     seccionFooter,
-  } = template2;
+  } = templateData;
 
   return (
     <>

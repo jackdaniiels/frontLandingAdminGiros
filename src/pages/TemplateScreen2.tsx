@@ -14,6 +14,14 @@ export const TemplateScreen2 = () => {
   const { template1 } = useContext<any>(Template1Context);
   // const template1 = data['template1'][0].attributes;
 
+  if (!template1) {
+    return (
+      <>
+        <p>Servidor no disponible.</p>
+      </>
+    );
+  }
+
   const {
     seccionMenu,
     seccionBanner,

@@ -2,9 +2,8 @@ import { lazy, LazyExoticComponent } from "react";
 import { getDataTemplate1 } from '../services/getDataTemplate1';
 
 
-getDataTemplate1().then(data => {
-    console.log('data 1 on routes', data);
-});
+interface ApiResponseModel { id: number, attributes: any }
+
 
 type JSXComponent = () => JSX.Element;
 
@@ -23,11 +22,31 @@ const lazyTemplate3 = lazy(() => import(/*webpackChunkName: "Template1"*/"../pag
 const lazyLandingItems = lazy(() => import(/*webpackChunkName: "Template1"*/"../pages/ListLandings"));
 
 
-export const routes: Route[] = [
+export let routes: Route[] = [
     // { to: '/login', path: 'login', Component: lazyLogin, name: 'Login' },
     // { to: '/password', path: 'password', Component: lazyPassword, name: 'password' },
-    { to: '/template', path: 'template', Component: lazyTemplate1, name: 'template' },
-    { to: '/template2', path: 'template2', Component: lazyTemplate2, name: 'template2' },
-    { to: '/template3', path: 'template3', Component: lazyTemplate3, name: 'template3' },
+    { to: '/template', path: 'info/:id', Component: lazyTemplate1, name: 'template' },
+    { to: '/template2', path: 'product/:id', Component: lazyTemplate2, name: 'template2' },
+    { to: '/template3', path: 'lead/:id', Component: lazyTemplate3, name: 'template3' },
     { to: '/landings', path: 'landings', Component: lazyLandingItems, name: 'landings' },
 ];
+
+getDataTemplate1().then(data => {
+    const mapRoutes: string[] = data
+        .map(({ id, attributes }: ApiResponseModel, index: number) => attributes.ruta);
+    // routes[5] = createRoutes(mapRoutes)[0];
+    // console.log(routes);
+});
+
+const createRoutes = (routes: string[]): any => {
+    const tempRoutes = routes.map((route: string, index: number) => (
+        {
+            to: `/${route}`,
+            path: `${route}`,
+            Component: lazyTemplate1,
+            name: `${route}`
+        }
+    ));
+
+    return tempRoutes;
+}

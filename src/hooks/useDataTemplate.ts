@@ -31,6 +31,7 @@ export const useDataTemplate = () => {
     const template1 = () => {
         getDataTemplate2().then((data) => {
             const { attributes } = data;
+            console.log('dataTemplate1', data);
             setDataTemplate1(attributes);
         });
     };
@@ -38,6 +39,8 @@ export const useDataTemplate = () => {
     const template2 = () => {
         getDataTemplate1().then((data) => {
             const { attributes } = data;
+            console.log('dataTemplate2', data);
+
             setDataTemplate2(attributes);
         });
     };
@@ -45,6 +48,8 @@ export const useDataTemplate = () => {
     const template3 = () => {
         getDataTemplate3().then((data) => {
             const { attributes } = data;
+            console.log('dataTemplate3', data);
+
             setDataTemplate3(attributes);
         });
     };

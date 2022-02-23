@@ -14,6 +14,14 @@ export const TemplateScreen3 = () => {
   const { template3 } = useContext<any>(Template1Context);
   // const template3 = data['template3'][0].attributes;
 
+  if (!template3) {
+    return (
+      <>
+        <p>Servidor no disponible.</p>
+      </>
+    );
+  }
+
   const {
     seccionMenu,
     seccionTexto1,
@@ -80,7 +88,7 @@ export const TemplateScreen3 = () => {
             backgroundImg={template3?.ctaBackgroundImg2?.data?.attributes?.url}
           >
             <div className="banner-cta">
-              <CallToAction1
+              <CallToAction2
                 data={template3}
                 title={template3?.ctaTitulo1}
                 description={template3?.ctaDescripcion1}
@@ -115,7 +123,7 @@ export const TemplateScreen3 = () => {
             backgroundImg={template3?.ctaBackgroundImg3?.data?.attributes?.url}
           >
             <div className="banner-cta">
-              <CallToAction2
+              <CallToAction1
                 data={template3}
                 title={template3?.ctaTitulo1}
                 description={template3?.ctaDescripcion1}
@@ -151,7 +159,7 @@ export const TemplateScreen3 = () => {
             backgroundImg={template3?.ctaBackgroundImg4?.data?.attributes?.url}
           >
             <div className="banner-cta">
-              <CallToAction1
+              <CallToAction2
                 data={template3}
                 title={template3?.ctaTitulo1}
                 description={template3?.ctaDescripcion1}
