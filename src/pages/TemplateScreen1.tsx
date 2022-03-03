@@ -35,11 +35,7 @@ export const TemplateScreen1 = () => {
       setExistData(true);
       setData(dataResp.attributes);
     }
-
-    console.log("fData fffff =>", data);
   };
-
-
 
   if (!existData) {
     return (
