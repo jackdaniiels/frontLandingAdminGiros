@@ -9,9 +9,9 @@ import SwiperCore, { Autoplay, Keyboard, Pagination, Navigation } from "swiper";
 import { Template1Context } from "../context/Template1Context";
 import Description from "./Description";
 
-export const CarrouselText = () => {
-  const { template1 } = useContext<any>(Template1Context);
-  const { slideBackgroundImg } = template1;
+export const CarrouselText = ({data}: {data: any}) => {
+
+  const { slideBackgroundImg } = data;
   let count = 0;
 
   const backgroundImg = slideBackgroundImg?.data?.attributes?.url || "";
@@ -23,15 +23,15 @@ export const CarrouselText = () => {
       "activarSlide3",
       "activarSlide4",
     ];
-    count = Object.keys(template1).filter((key) =>
+    count = Object.keys(data).filter((key) =>
       activeSliders.includes(key)
     ).length;
   };
 
   countActiveSliders();
 
-  const delay: number = template1?.autoplayDelay
-    ? Number(`${template1?.autoplayDelay}000`)
+  const delay: number = data?.autoplayDelay
+    ? Number(`${data?.autoplayDelay}000`)
     : 0;
   SwiperCore.use([Keyboard, Autoplay, Navigation]);
 
@@ -46,31 +46,31 @@ export const CarrouselText = () => {
         navigation={true}
         className="mySwiper py-5"
       >
-        {template1?.activarSlide1 && (
+        {data?.activarSlide1 && (
           <SwiperSlide className="">
             <Description
-              title={template1?.tituloSlide1}
-              description={template1?.descripcionSlide1}
+              title={data?.tituloSlide1}
+              description={data?.descripcionSlide1}
               darkMode={true}
               bgDark={false}
             />
           </SwiperSlide>
         )}
-        {template1?.activarSlide2 && (
+        {data?.activarSlide2 && (
           <SwiperSlide className="">
             <Description
-              title={template1?.tituloSlide2}
-              description={template1?.descripcionSlide2}
+              title={data?.tituloSlide2}
+              description={data?.descripcionSlide2}
               darkMode={true}
               bgDark={false}
             />
           </SwiperSlide>
         )}
-        {template1?.activarSlide3 && (
+        {data?.activarSlide3 && (
           <SwiperSlide className="">
             <Description
-              title={template1?.tituloSlide3}
-              description={template1?.descripcionSlide3}
+              title={data?.tituloSlide3}
+              description={data?.descripcionSlide3}
               darkMode={true}
               bgDark={false}
             />

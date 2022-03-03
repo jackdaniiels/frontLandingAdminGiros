@@ -7,7 +7,7 @@ export const getDataTemplate3 = async () => {
         response = await axios.get(
             'http://localhost:1337/api/landing-3s?populate=*',
         );
-        data = response?.data?.data[0] || {};
+        data = response?.data?.data || [];
     } catch (error) {
         console.error('error', error);
         data = [];
