@@ -1,13 +1,11 @@
 import axios from 'axios';
-import { urlApi } from '../env/env';
 
-export const getDataTemplate1 = async () => {
-    let url = urlApi;
+export const getServer = async () => {
     let response: any;
     let data: any;
     try {
         response = await axios.get(
-            `${url}/landing-1s?populate=*`,
+            'http://localhost:1337/api/servers',
         );
         data = response?.data?.data || [];
     } catch (error) {

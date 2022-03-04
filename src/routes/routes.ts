@@ -25,9 +25,9 @@ const lazyLandingItems = lazy(() => import(/*webpackChunkName: "Template1"*/"../
 export let routes: Route[] = [
     // { to: '/login', path: 'login', Component: lazyLogin, name: 'Login' },
     // { to: '/password', path: 'password', Component: lazyPassword, name: 'password' },
-    { to: '/template', path: 'info/:id', Component: lazyTemplate1, name: 'template' },
-    { to: '/template2', path: 'product/:id', Component: lazyTemplate2, name: 'template2' },
-    { to: '/template3', path: 'lead/:id', Component: lazyTemplate3, name: 'template3' },
+    { to: '/template', path: 'info/:id', Component: lazyTemplate1, name: 'template' },        // page 2
+    { to: '/template2', path: 'product/:id', Component: lazyTemplate2, name: 'template2' },   // page 1
+    { to: '/template3', path: 'lead/:id', Component: lazyTemplate3, name: 'template3' },      // page 3
     { to: '/landings', path: 'landings', Component: lazyLandingItems, name: 'landings' },
 ];
 

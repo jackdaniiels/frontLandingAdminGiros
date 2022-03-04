@@ -13,6 +13,6 @@ export const getTemplateDtaById = async (landing: number,id:string) => {
         data = [];
     }
 
-    console.log('data1', data);
+    // console.log('data1', data);
     return data;
 }

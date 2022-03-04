@@ -1,11 +1,13 @@
 import axios from 'axios';
+import { urlApi } from '../env/env';
 
 export const getDataTemplate3 = async () => {
+    let url = urlApi;
     let response: any;
     let data: any;
     try {
         response = await axios.get(
-            'http://localhost:1337/api/landing-3s?populate=*',
+            `${url}/landing-3s?populate=*`,
         );
         data = response?.data?.data || [];
     } catch (error) {
@@ -13,6 +15,6 @@ export const getDataTemplate3 = async () => {
         data = [];
     }
 
-    console.log('data3', data);
+    // console.log('data3', data);
     return data;
 }

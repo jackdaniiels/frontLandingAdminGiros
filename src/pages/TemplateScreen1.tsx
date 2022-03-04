@@ -37,13 +37,15 @@ export const TemplateScreen1 = () => {
     }
   };
 
-  if (!existData) {
+  if (!existData || !data) {
     return (
       <>
         <NotFoundPage />
       </>
     );
-  }
+
+
+  } 
 
   // return (
   //   <><pre>{JSON.stringify(data, null,3)}</pre></>

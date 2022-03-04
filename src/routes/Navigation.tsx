@@ -1,20 +1,15 @@
-import { Suspense, useEffect } from 'react';
-import { useContext } from "react";
+import { Suspense } from 'react';
 
 import {
   BrowserRouter,
-  NavLink,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import logo from "../logo.svg";
+import NotFoundPage from '../components/NotFoundPage';
 import { routes } from "./routes";
-import TemplateScreen1 from '../pages/TemplateScreen1';
 
 export const Navigation = () => {
-
-  console.log(routes);
 
   return (
     <Suspense fallback={<span>Cargando...</span>}>
@@ -40,8 +35,8 @@ export const Navigation = () => {
               <Route key={to} path={path} element={<Component />} />
             ))}
             {/* <Route path="/info/:id" element={<TemplateScreen1/>} /> */}
-            <Route path="/home" element={<h1>Home page</h1>} />
-            <Route path="/*" element={<Navigate to="/home" replace />} />
+            <Route path="/" element={<NotFoundPage/>} />
+            <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </BrowserRouter>
