@@ -4,30 +4,28 @@ import logoVigilado from "../assets/img/logo-vigilado.svg";
 
 export const Footer = () => {
   return (
-    <footer className="footer bg-yellow">
-      <div className="container w-100">
-        <div className="d-flex justify-content-between center-on-mobile w-100 px-3">
-          <div>
+    <nav className="navbar">
+      <div className="container d-flex justify-content-start center-on-mobile">
+        <div>
+          <img
+            src={logoVigilado}
+            width="5"
+            height="auto"
+            className="d-inline-block align-top"
+            alt="logo-vigilado"
+          />
+        </div>
+        <div className="mx-5">
+          <a className="navbar-brand" href="#">
             <img
-              src={logoVigilado}
-              width="5"
+              src={logoSlogan}
               height="auto"
-              className="d-inline-block align-top"
-              alt=""
+              className="img-fluid logo d-inline-block align-top"
+              alt="logo-slogan"
             />
-          </div>
-          <div>
-            <a className="navbar-brand" href="#">
-              <img
-                src={logoSlogan}
-                height="auto"
-                className="img-fluid logo d-inline-block align-top"
-                alt=""
-              />
-            </a>
-          </div>
+          </a>
         </div>
       </div>
-    </footer>
+    </nav>
   );
 };
