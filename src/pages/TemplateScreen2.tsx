@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from "react";
 import { CallToAction2 } from "../components/CallToAction2";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -9,9 +9,9 @@ import { Cards2 } from "../components/Cards2";
 import Description from "../components/Description";
 import { Button } from "../components/Button";
 import { Cards3 } from "../components/Cards3";
-import { getDataTemplate1 } from '../services/getDataTemplate1';
-import { useParams } from 'react-router-dom';
-import NotFoundPage from '../components/NotFoundPage';
+import { getDataTemplate1 } from "../services/getDataTemplate1";
+import { useParams } from "react-router-dom";
+import NotFoundPage from "../components/NotFoundPage";
 
 export const TemplateScreen2 = () => {
   const [data, setData] = useState<any>({});
@@ -40,7 +40,6 @@ export const TemplateScreen2 = () => {
       setExistData(true);
       setData(dataResp.attributes);
     }
-
   };
 
   if (!existData) {
@@ -50,7 +49,6 @@ export const TemplateScreen2 = () => {
       </>
     );
   }
-
 
   const {
     seccionMenu,
@@ -62,13 +60,16 @@ export const TemplateScreen2 = () => {
     seccionTitulo2,
     showBoton1,
     seccionFooter,
+    logo,
+    server,
   } = data;
   return (
     <>
-      {seccionMenu && <Header />}
+      {seccionMenu && <Header logo={server + logo?.data?.attributes?.url} />}
       {seccionBanner && (
         <div className="banner-cta">
           <CallToAction2
+            server={server}
             data={data}
             title={data?.ctaTitulo1}
             description={data?.ctaDescripcion1}
@@ -82,6 +83,7 @@ export const TemplateScreen2 = () => {
 
       <div className="container bg-dark-disabled my-5">
         <BgImg
+          server={server}
           backgroundImg={data?.backgroundImagen1?.data?.attributes?.url}
         >
           {seccionSlidesTexto && <CarrouselText data={data} />}
@@ -103,6 +105,7 @@ export const TemplateScreen2 = () => {
       {seccionCardsHorizontal && (
         <div className="container bg-dark-disabled">
           <BgImg
+            server={server}
             backgroundImg={data?.backgroundImagen2?.data?.attributes?.url}
           >
             <div className="py-5">
@@ -132,7 +135,7 @@ export const TemplateScreen2 = () => {
           />
         </div>
       )}
-      {seccionFooter && <Footer />}
+      {seccionFooter && <Footer logo={server + logo?.data?.attributes?.url} />}
     </>
   );
 };

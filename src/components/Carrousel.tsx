@@ -47,11 +47,12 @@ export const Carrousel = ({data}: {data: any}) => {
         }}
         className="mySwiper fullscreen-img"
         style={{
-          backgroundImage: `url(http://localhost:1337${backgroundImg})`,
+          backgroundImage: `url(${data?.server}${backgroundImg})`,
         }}
       >
         <SwiperSlide>
           <CallToAction2
+            server={data?.server}
             data={data}
             title={data?.tituloSlide1}
             description={data?.descripcionSlide1}
@@ -62,6 +63,7 @@ export const Carrousel = ({data}: {data: any}) => {
         </SwiperSlide>
         <SwiperSlide>
           <CallToAction1
+           server={data?.server}
             data={data}
             title={data?.tituloSlide2}
             description={data?.descripcionSlide2}

@@ -9,4 +9,5 @@ export interface CallToActionInterface {
     active?: boolean;
     darkMode?: boolean;
     showButton?: boolean;
+    server: string;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import logoSlogan from "../assets/img/logo-slogan.svg";
 import logoVigilado from "../assets/img/logo-vigilado.svg";
 
-export const Footer = () => {
+export const Footer = ({ logo }: { logo: string }) => {
   return (
     <nav className="navbar">
       <div className="container d-flex justify-content-start center-on-mobile">
@@ -18,7 +18,7 @@ export const Footer = () => {
         <div className="mx-5">
           <a className="navbar-brand" href="#">
             <img
-              src={logoSlogan}
+              src={logo}
               height="auto"
               className="img-fluid logo d-inline-block align-top"
               alt="logo-slogan"

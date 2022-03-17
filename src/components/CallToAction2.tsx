@@ -10,6 +10,7 @@ export const CallToAction2 = ({
   target = "",
   darkMode = false,
   showButton = true,
+  server = ''
 }: CallToActionInterface) => {
   return (
     <div className="center-content my-5">
@@ -44,7 +45,7 @@ export const CallToAction2 = ({
         <div className="col-xl-6 center-content order-xl-2 order-lg-2 order-md-2 order-sm-1 order-xs-1">
           <img
             className="img-fluid"
-            src={`http://localhost:1337` + img || ""}
+            src={`${server}` + img || ""}
             alt=""
           />
         </div>

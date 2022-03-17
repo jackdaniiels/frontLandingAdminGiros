@@ -61,11 +61,14 @@ export const TemplateScreen1 = () => {
     seccionTexto3,
     seccionFooter,
     slideBackgroundImg,
+    logo,
+    server
   } = data;
+
 
   return (
     <>
-      {seccionMenu && <Header />}
+      {seccionMenu && <Header logo={server+logo?.data?.attributes?.url}/>}
       {seccionSlides && <Carrousel data={data} />}
       {seccionTexto1 && (
         <Description
@@ -85,6 +88,7 @@ export const TemplateScreen1 = () => {
       )}
       {seccionCalltoAction && (
         <CallToAction1
+          server={server}
           data={data}
           title={data?.ctaTitulo1}
           description={data?.ctaDescripcion1}
@@ -101,7 +105,7 @@ export const TemplateScreen1 = () => {
           className={"my-5"}
         />
       )}
-      {seccionFooter && <Footer />}
+      {seccionFooter && <Footer logo={server+logo?.data?.attributes?.url} />}
     </>
   );
 };

@@ -9,4 +9,5 @@ export interface CardInterface {
     target?: string;
     active?: boolean;
     darkMode?: boolean;
+    server: string;
 }

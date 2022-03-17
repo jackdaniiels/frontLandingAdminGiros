@@ -1,4 +1,3 @@
-import React, { useContext, useState } from "react";
 import ".././App.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
@@ -8,12 +7,10 @@ import "swiper/modules/navigation/navigation.min.css";
 import SwiperCore, { Autoplay, Pagination } from "swiper";
 import { CallToAction2 } from "./CallToAction2";
 import { CallToAction1 } from "./CallToAction1";
-import { Template1Context } from "../context/Template1Context";
 import { Navigation } from "../routes/Navigation";
 
-export const CarrouselbgFullImg = () => {
-  const { template2 } = useContext<any>(Template1Context);
-  const { slideBackgroundImg } = template2;
+export const CarrouselbgFullImg = ({ data }: {data: any}) => {
+  const { slideBackgroundImg } = data;
   let count = 0;
 
   const backgroundImg = slideBackgroundImg?.data?.attributes?.url || "";
@@ -25,15 +22,15 @@ export const CarrouselbgFullImg = () => {
       "activarSlide3",
       "activarSlide4",
     ];
-    count = Object.keys(template2).filter((key) =>
+    count = Object.keys(data).filter((key) =>
       activeSliders.includes(key)
     ).length;
   };
 
   countActiveSliders();
 
-  const delay: number = template2?.autoplayDelay
-    ? Number(`${template2?.autoplayDelay}000`)
+  const delay: number = data?.autoplayDelay
+    ? Number(`${data?.autoplayDelay}000`)
     : 0;
   SwiperCore.use([delay > 0 && Autoplay, count >= 1 && Pagination, Navigation]);
 
@@ -50,27 +47,29 @@ export const CarrouselbgFullImg = () => {
         }}
         className="mySwiper fullscreen-img"
         style={{
-          backgroundImage: `url(http://localhost:1337${backgroundImg})`,
+          backgroundImage: `url(${data?.server}${backgroundImg})`,
         }}
       >
         <SwiperSlide>
           <CallToAction2
-            data={template2}
-            title={template2?.tituloSlide1}
-            description={template2?.descripcionSlide1}
-            button={template2?.botonSlide1}
-            img={template2?.imagenSlide1?.data?.attributes?.url}
-            link={template2?.linkSlide1}
+            server={data?.server}
+            data={data}
+            title={data?.tituloSlide1}
+            description={data?.descripcionSlide1}
+            button={data?.botonSlide1}
+            img={data?.imagenSlide1?.data?.attributes?.url}
+            link={data?.linkSlide1}
           />
         </SwiperSlide>
         <SwiperSlide>
           <CallToAction1
-            data={template2}
-            title={template2?.tituloSlide2}
-            description={template2?.descripcionSlide2}
-            button={template2?.botonSlide2}
-            img={template2?.imagenSlide2?.data?.attributes?.url}
-            link={template2?.linkSlide2}
+            server={data?.server}
+            data={data}
+            title={data?.tituloSlide2}
+            description={data?.descripcionSlide2}
+            button={data?.botonSlide2}
+            img={data?.imagenSlide2?.data?.attributes?.url}
+            link={data?.linkSlide2}
           />
         </SwiperSlide>
       </Swiper>

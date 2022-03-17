@@ -8,11 +8,12 @@ export const Card = ({
   link = "",
   button,
   target = "",
+  server=""
 }: CardInterface) => {
   return (
     <div key={idx} className="col-xl-2 col-lg-3 col-md-6 col-sm-6">
       <div className="d-flex justify-content-center">
-        <img src={`http://localhost:1337` + img || ""} alt="" />
+        <img src={`${server}` + img || ""} alt="" />
       </div>
       <p className="text-center mt-4">{description}</p>
       <div className="d-flex justify-content-center mb-5">

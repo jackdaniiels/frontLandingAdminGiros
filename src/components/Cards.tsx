@@ -13,6 +13,7 @@ export const Cards = ({ data }: { data: any }) => {
     targetCard3,
     targetCard4,
     targetCard5,
+    server,
   } = data;
 
   return (
@@ -20,6 +21,7 @@ export const Cards = ({ data }: { data: any }) => {
       <div className="row container d-flex justify-content-center w-100">
         {activarCard1 && (
           <Card
+            server={server}
             key={1}
             img={data.cardImagen1?.data?.attributes?.url}
             description={data?.cardDescripcion1}
@@ -30,6 +32,7 @@ export const Cards = ({ data }: { data: any }) => {
         )}
         {activarCard2 && (
           <Card
+            server={server}
             key={2}
             img={data.cardImagen2?.data?.attributes?.url}
             description={data?.cardDescripcion2}
@@ -40,6 +43,7 @@ export const Cards = ({ data }: { data: any }) => {
         )}
         {activarCard3 && (
           <Card
+            server={server}
             key={3}
             img={data.cardImagen3?.data?.attributes?.url}
             description={data?.cardDescripcion3}
@@ -50,6 +54,7 @@ export const Cards = ({ data }: { data: any }) => {
         )}
         {activarCard4 && (
           <Card
+            server={server}
             key={4}
             img={data.cardImagen4?.data?.attributes?.url}
             description={data?.cardDescripcion4}
@@ -60,6 +65,7 @@ export const Cards = ({ data }: { data: any }) => {
         )}
         {activarCard5 && (
           <Card
+            server={server}
             key={5}
             img={data.cardImagen5?.data?.attributes?.url}
             description={data?.cardDescripcion5}

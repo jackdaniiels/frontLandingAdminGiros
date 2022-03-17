@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from "react";
 import { CallToAction2 } from "../components/CallToAction2";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
@@ -8,9 +8,9 @@ import Description from "../components/Description";
 import { CallToAction1 } from "../components/CallToAction1";
 import { Form } from "../components/Form";
 import { Form2 } from "../components/Form2";
-import { useParams } from 'react-router-dom';
-import { getDataTemplate3 } from '../services/getDataTemplate3';
-import NotFoundPage from '../components/NotFoundPage';
+import { useParams } from "react-router-dom";
+import { getDataTemplate3 } from "../services/getDataTemplate3";
+import NotFoundPage from "../components/NotFoundPage";
 
 export const TemplateScreen3 = () => {
   const [data, setData] = useState<any>({});
@@ -41,7 +41,6 @@ export const TemplateScreen3 = () => {
     }
 
     console.log("333", data);
-
   };
 
   if (!existData) {
@@ -68,17 +67,22 @@ export const TemplateScreen3 = () => {
     seccionFooter,
     formulario1,
     formulario2,
+    logo,
+    server,
   } = data;
+
   return (
     <>
-      {seccionMenu && <Header />}
+      {seccionMenu && <Header logo={server + logo?.data?.attributes?.url} />}
       {seccionCta1 && (
         <div className="container bg-dark-none">
           <BgImg
+            server={server}
             backgroundImg={data?.ctaBackgroundImg1?.data?.attributes?.url}
           >
             <div className="banner-cta">
               <CallToAction1
+                server={server}
                 data={data}
                 title={data?.ctaTitulo1}
                 description={data?.ctaDescripcion1}
@@ -115,10 +119,12 @@ export const TemplateScreen3 = () => {
       {seccionCta2 && (
         <div className="container bg-dark-none">
           <BgImg
+            server={server}
             backgroundImg={data?.ctaBackgroundImg2?.data?.attributes?.url}
           >
             <div className="banner-cta">
               <CallToAction2
+                server={server}
                 data={data}
                 title={data?.ctaTitulo1}
                 description={data?.ctaDescripcion1}
@@ -150,10 +156,12 @@ export const TemplateScreen3 = () => {
       {seccionCta3 && (
         <div className="container bg-dark-none">
           <BgImg
+            server={server}
             backgroundImg={data?.ctaBackgroundImg3?.data?.attributes?.url}
           >
             <div className="banner-cta">
               <CallToAction1
+                server={server}
                 data={data}
                 title={data?.ctaTitulo1}
                 description={data?.ctaDescripcion1}
@@ -186,10 +194,12 @@ export const TemplateScreen3 = () => {
       {seccionCta4 && (
         <div className="container bg-dark-none">
           <BgImg
+            server={server}
             backgroundImg={data?.ctaBackgroundImg4?.data?.attributes?.url}
           >
             <div className="banner-cta">
               <CallToAction2
+                server={server}
                 data={data}
                 title={data?.ctaTitulo1}
                 description={data?.ctaDescripcion1}
@@ -223,7 +233,7 @@ export const TemplateScreen3 = () => {
         </div>
       )}
 
-      {seccionFooter && <Footer />}
+      {seccionFooter && <Footer logo={server + logo?.data?.attributes?.url} />}
     </>
   );
 };

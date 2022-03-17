@@ -4,7 +4,7 @@ import "../styles/module.scss";
 import logoVigilado from "../assets/img/logo-vigilado.svg";
 import logoSlogan from "../assets/img/logo-slogan.svg";
 
-export const Header = () => {
+export const Header = ({ logo }: { logo: string }) => {
   return (
     <nav className="navbar">
       <div className="container d-flex justify-content-start center-on-mobile">
@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="mx-5">
           <a className="navbar-brand" href="#">
             <img
-              src={logoSlogan}
+              src={logo}
               height="auto"
               className="img-fluid logo d-inline-block align-top"
               alt="logo-slogan"
